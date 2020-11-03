@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BooksPage {
 
     public BooksPage(){
@@ -66,6 +69,20 @@ public class BooksPage {
 
         Assert.assertTrue(bookTable.getText().contains(newName));
     }
+
+
 // *******************************************************************************
+@FindBy(xpath = "(//tr[@role='row'])[1]")
+    public List<WebElement> tableHeader;
+
+    public void actualTableHeader (List<String> expectedTableHeader){
+         List<String> actualColumn = new ArrayList<>();
+         for (WebElement each: tableHeader){
+             actualColumn.add(each.getText());
+         }
+        BrowserUtils.wait(2);
+         Assert.assertEquals(actualColumn.toString().replaceAll(",",""),expectedTableHeader.toString().replaceAll(",",""));
+    }
+
 
 }
