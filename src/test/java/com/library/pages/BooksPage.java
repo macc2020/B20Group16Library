@@ -37,7 +37,35 @@ public class BooksPage {
         Assert.assertTrue(bookTable.getText().contains(authorToLocate));
     }
 
-//*******************************************************************************
+//****************** Edit Book **************************************************
 
+    @FindBy(xpath = "//table[@id='tbl_books']//td[1]")
+    public WebElement EditBooksButton;
+
+    @FindBy(xpath = "//input[@name='name']")
+    public WebElement bookNameInputBox;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement saveChangesButton;
+
+    public void searchBookByName (String name){
+        searchBox.sendKeys(name);
+    }
+
+
+    public void editBookNameAssertion(){
+        String newName = "Wonderland";
+
+        bookNameInputBox.clear();
+        bookNameInputBox.sendKeys(newName);
+        saveChangesButton.click();
+        BrowserUtils.wait(2);
+
+        searchBookByName(newName);
+        BrowserUtils.wait(2);
+
+        Assert.assertTrue(bookTable.getText().contains(newName));
+    }
+// *******************************************************************************
 
 }

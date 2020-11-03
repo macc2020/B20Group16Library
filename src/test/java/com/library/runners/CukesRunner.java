@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/library/step_definitions",
         dryRun = false,
-        tags = "@search_box_locateBook"
+        tags = "@edit_book"
 )
 
 public class CukesRunner {
