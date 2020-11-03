@@ -5,7 +5,7 @@ import com.library.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Macc2020_StepDefinitions {
+public class US1AC7_StepDefinitions {
 
 
     Mac2020LandingPage mac2020LandingPage=new Mac2020LandingPage();
