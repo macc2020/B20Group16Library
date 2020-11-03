@@ -42,4 +42,22 @@ public class Login_StepDefinitions {
     }
 
 
+
+    @Given("user is on librarian Dashboard page")
+    public void user_is_on_librarian_dashboard_page() {
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("libraryURL"));
+        BrowserUtils.wait(2);
+
+        loginPage.loginAsLibrarian();
+        BrowserUtils.wait(2);
+    }
+
+
+
+
+
+
+
+
 }
