@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com/library/step_definitions",
-        dryRun = true,
-        tags = "@Macc2020Test"
+        dryRun = false,
+        tags = "@HeaderVerification"
 )
 
 public class CukesRunner {
